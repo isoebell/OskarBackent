@@ -1,0 +1,295 @@
+@font-face {
+    font-family: 'WorkSans';
+    src: url('fonts/WorkSans-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'WorkSans', sans-serif;
+    font-size: 1em;
+    color: hsl(5, 100%, 26%);
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* Hide the vertical scrollbar while keeping scroll functionality */
+    overflow-y: scroll; /* Allow vertical scrolling */
+    scrollbar-width: thin; /* Optionally make the scrollbar thinner */
+    scrollbar-color: transparent transparent; /* Make the scrollbar transparent */
+    background-color: hsl(55, 27%, 31%); /* Set background color for the page */
+        
+}
+
+/* For Webkit-based browsers (Chrome, Safari, etc.) */
+body::-webkit-scrollbar {
+    width: 0; /* Hides the scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+    background: transparent; /* Hides the thumb part of the scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent; /* Hides the track part of the scrollbar */
+}
+
+
+
+.header {
+    padding-left: 1%;
+    padding-top: 1%;
+    font-size: 3em;
+}
+
+h2 {
+    font-weight: normal;
+}
+
+.landing-container{
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: flex-start; /* Align items to the top */
+    height: 100vh; /* Full height of the viewport */
+    flex: 1;
+
+}
+
+.navigation {
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Stack items vertically */
+    flex: 1; /* Fill the remaining space */
+    min-width: max-content; /* Set the width based on content size */
+    padding-left: 1%; /* Add some padding to the left */
+    padding-right: 1%; /* Add some padding to the right */
+    font-size: 2em;
+    padding-top: 0.5em;
+    gap: 0.2em; /* Add some space between the items */
+    flex: 1; /* Fill the remaining space */
+}
+
+.navigation a {
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+/* Make sure all images are hidden initially */
+.hover-image {
+    display: none;
+    max-width: 600px; /* Make the image smaller by setting a specific width */
+    height: auto;
+    max-height: 500px; /* Set a max-height to prevent image overflow */
+    top: 0; /* Position the image at the top */
+    position: absolute; /* This will allow the image to overlay on the link */
+    right: 20%; /* Position the image on the right side */
+    z-index: 1; /* Ensure it's on top */
+}
+
+/* Display the image when hovering over the item */
+.item:hover .hover-image {
+    display: block;
+}
+
+/* Style the .item to make sure it has position relative (if needed) */
+.item {
+    position: relative;
+    padding: 10px;
+    display: inline-block;
+}
+
+
+.page-container {
+    display: flex; /* Enable flexbox */
+    flex: 1; /* Fill the remaining space */
+    flex-direction: row; /* Stack items vertically */
+    padding-top: 1%;
+}
+
+.drop-navigation {
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Stack items vertically */
+    padding-left: 1%; /* Add some padding to the left */
+    padding-right: 1%; /* Add some padding to the right */
+    font-size: 1.5em;
+    gap: 0.5em; /* Add some space between the items */
+    width: fit-content; /* Set the width based on content size */
+    max-width: 100%; /* Allow width to adjust based on content */
+    min-width: 24rem; /* Prevent collapse by ensuring a minimum width */
+}
+
+.drop-navigation a {
+    text-decoration: none;
+}
+
+.drop-navigation a:hover {
+    text-decoration: underline;
+}
+
+.drop-navigation p.title:hover {
+    text-decoration: underline;
+}
+
+
+/* Content area */
+.content {
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.content img {
+    max-width: 90%;
+    height: auto;
+    max-height: 60vh;
+}
+
+.content video {
+    width: auto;
+    max-width: 90%;
+    height: auto;
+    max-height: 60vh;
+    object-fit: contain;
+}
+
+/* Content area-all vertical*/
+.content-vertical {
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.content-vertical img {
+    width: auto;
+    height: auto;
+    max-width: 90%;
+    max-height: 60vh;
+    object-fit: contain;
+}
+
+.content-vertical video {
+    width: auto;
+    max-width: 90%;
+    height: auto;
+    max-height: 60vh;
+}
+
+.content-vertical .video{
+    display: flex;
+    gap: 0.5em;
+
+}
+
+.content-vertical .image {
+    display: flex;
+    width: auto;
+    max-width: 90%;
+    height: auto;
+    max-height: 60vh;
+    gap: 0.5em;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+html body .footer {
+    background-color: transparent !important; /* Increase specificity */
+}
+
+.footer {
+    padding-top: 0.5%;
+    padding-left: 1%;
+    padding-bottom: 1%;
+    font-size: smaller;
+    bottom: 0;
+    background-color: transparent !important; /* Forces override with !important */
+    position: sticky;
+}
+
+/* Container for the images, ensures correct positioning */
+.image-container {
+    position: relative;  /* Relative positioning for the container */
+    display: flex;
+    justify-content: center; /* Center images horizontally */
+    align-items: flex-start;  /* Align images to the top */
+    height: 100vh; /* Full height of the viewport */
+    width: 100vw; /* Full width of the viewport */
+    overflow: hidden;  /* Hide anything that overflows the container */
+    z-index: 0;
+}
+
+/* Style for the images inside .image-container */
+.image-container img {
+    display: none; /* Images are hidden by default */
+    position: absolute; /* Position images absolutely within the container */
+    max-width: 42vw;  /* Make the image smaller by setting a specific width */
+    height: auto; /* Maintain the aspect ratio */
+    max-height: 65vh; /* Set a max-height to prevent image overflow */
+    object-fit: contain;  /* Ensure the image doesn't stretch or lose its aspect ratio */
+    z-index: 1; /* Make sure images are on top of other content */
+    transition: opacity 0.3s ease-in-out; /* Add smooth fading effect */
+}
+
+.image-wrapper {
+    display: inline-block; /* Make the wrapper inline-block so it fits the width of the image */
+}
+
+.image-wrapper img {
+    max-width: 90%; /* Ensures the image is responsive */
+    height: auto;
+}
+
+.image-wrapper p {
+    padding: 1% 0; /* Add some padding to the top and bottom */
+    width: 90%; /* Ensure the paragraph has the same width as the image */
+    display: block; /* Make the <p> behave like a block element */
+}
+
+
+.random-image {
+    position: absolute;
+    max-width: 30%;  /* You can adjust the image size */
+    max-height: auto;
+    z-index: 1;
+    display: none;
+}
+
+/* Initially hide the infoText */
+.infoText {
+    display: none; /* Hide by default */
+    max-height: 0; /* No height initially */
+    overflow: hidden; /* Hide any content overflow */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Distribute items evenly */
+}
+
+/* When the show class is added, display the dropdown */
+.infoText.show {
+    display: flex; /* Show it using flexbox */
+    max-height: 100%; /* Set a max-height for the dropdown (increase as needed) */
+    padding: 1%;
+    padding-left: 1em; /* Left padding for the content */
+    width: max-content; /* Make the width based on content size */
+}
