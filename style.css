@@ -148,12 +148,16 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
+    align-items: flex-start;
 }
 
 .content img {
-    max-width: 90%;
     height: auto;
+    width: auto;
+    max-width: 90%;
     max-height: 60vh;
+    object-fit: contain;
+    
 }
 
 .content video {
