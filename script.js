@@ -16,10 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Function to show/hide hover images for specific headers
+    // Function to show/hide hover images for specific headers and apply blur to video
     function handleHover(headerId, imageId) {
         const header = document.getElementById(headerId);
         const image = document.getElementById(imageId);
+        const video = document.getElementById('homepage-video'); // Select the video element
 
         // Ensure image positioning is correct
         function updateImagePosition(image) {
@@ -33,10 +34,20 @@ document.addEventListener("DOMContentLoaded", function () {
         header.addEventListener('mouseenter', function () {
             updateImagePosition(image);  // Ensure correct position when hovered
             image.style.display = 'block';  // Display the image
+
+            // Apply blur to the video when hovering over the header (h2)
+            if (video) {
+                video.style.filter = 'blur(5px)';  // Apply blur effect to the video
+            }
         });
 
         header.addEventListener('mouseleave', function () {
             image.style.display = 'none';  // Hide the image when hover ends
+
+            // Remove the blur effect when hover ends
+            if (video) {
+                video.style.filter = '';  // Remove the blur effect
+            }
         });
     }
 
