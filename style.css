@@ -244,12 +244,14 @@ h2 {
     padding: 2% 0 0 2%;
     width: 96%;
     height: auto;
-    display: block;
 }
 
+/* Hide the controls for desktop */
 #homepage-video[controls] {
-    display: none;
+    pointer-events: none; /* Disable interaction on desktop */
 }
+
+
 
 /* ------------------------------ MOBILE OPTIMIZATION ------------------------------ */
 
@@ -356,7 +358,7 @@ h2 {
     }
 
     #homepage-video[controls] {
-        display: block;
+        pointer-events: auto; /* Enable interaction for mobile */
     }
 }
 
