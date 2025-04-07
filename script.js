@@ -65,9 +65,21 @@ document.addEventListener("DOMContentLoaded", function () {
         handleHover('CV', 'hover-image-cv');
         handleHover('Contact', 'hover-image-contact');
     } else {
-        // Ensure images are hidden if on mobile (for devices <= 768px)
-        document.querySelectorAll('img').forEach(function (image) {
+        // Ensure hover images are hidden if on mobile (for devices <= 768px)
+        document.querySelectorAll('.hover-image img').forEach(function (image) {
             image.style.display = 'none';
+        });
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('homepage-video');
+
+    if (video) {
+        video.load(); // Ensure the video is loaded before attempting to play it
+        video.play().catch(error => {
+            console.log('Autoplay failed:', error);
         });
     }
 });
