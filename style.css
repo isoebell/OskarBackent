@@ -379,3 +379,38 @@ h2 {
         padding-left: 2%;
     }
 }
+
+/* ------------------------------ LARGE SCREEN OPTIMIZATION ------------------------------ */
+
+
+@media (min-width: 1700px) {
+    .header {
+        font-size: 3em; 
+    }
+
+    .navigation {
+        font-size: 3.5em; 
+    }
+
+    .footer {
+        padding-left: 1%;
+    }
+
+    .footer p {
+        font-size: 2em; 
+    }
+
+    .landing-container{
+        height: 80vh;
+    }
+
+    #homepage-video {
+        width: 100%;
+    }
+
+    .image-container img {
+        padding-top: 0; /* Remove the top padding */
+        padding-left: 2%;
+
+    }
+}
